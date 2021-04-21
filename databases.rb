@@ -22,7 +22,7 @@ create table  cats(
 cat_id int not null auto_increment,
 name varchar(100) not null default "unknown",
 age int not null default 3,
-primary_key (cat_id)
+primary key (cat_id)
 );
 
 show tables;
@@ -39,9 +39,13 @@ show warnings
 =begin
 CRUD
 
-CREATE insert into cats (name, age) values("monya", 5), ("nina", 10)
-READ
-UPPDATE
-DROP
+CREATE     => insert into cats (name, age) values("monya", 5), ("nina", 10)
+READ       => select name from cats/ select name, age from cats
+where         =>select * from cats where age=4
+UPPDATE    => update cats set name ="new name" where id=1;
+DELETE     => Delete from cats where  cat_id = 1        
+
+Alias      => select cat_id AS id from cats
+
 
 =end
