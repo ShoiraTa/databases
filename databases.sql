@@ -23,7 +23,7 @@ select database();
 CREATE     => insert into cats (name, age) values("monya", 5), ("nina", 10)
 READ       => select name from cats/ select name, age from cats
     where         =>select * from cats where age=4
-    alias         => select cat_id AS id from cats
+    alias         => select cat_id AS id from cats / select concat (surname, " ", name) AS "full name" from books 
 UPDATE     => update cats set name ="new name" where id=1;
 DELETE     => Delete from cats where  cat_id = 1        
 
@@ -45,4 +45,17 @@ SELECT * FROM cats
 SELECT name, population FROM world  WHERE name IN ('Sweden', 'Norway', 'Denmark');
 SELECT name, area FROM world  WHERE area BETWEEN 200000 AND 250000  
 SELECT name FROM world  WHERE name LIKE 'Y%'
+
+-- String methods
+SELECT CONCAT (name, " " , age) from cats
+SELECT author_fname as last, author_lname as first, concat (author_fname, " ", author_lname) as full from books;
+select substring("hello world", 4) ==> "hell"
+select substring("hello world", 4, -1) ==> "o world"
+select concat( substring(author_lname, 1,2), " ",author_fname ) as full_name from books;
+select replace("hello world", "hello", "hi") = > 'hi world'
+select reverse (title) from books 
+select author_fname, CHAR_LENGTH(author_fname) from books
+select upper(title)
+select lower (title)
+
 
