@@ -10,13 +10,39 @@
 -- troubleshooting
 show warnings
 
+POSTGRESQL
 
--- Create show delete
+> check commands service postgresql 
+    > service postgresql status
+> use postgres sudo su postgres
+   >commandline  psql
+
+create user and make superhost
+> CREATE USER shoira WITH PASSWORD 'password'
+> ALTER USER shoira SUPERUSER
+
+create database and connect to it
+> postgres# : CREATE DATABASE TEST
+        > psql -h localhost -p 5432 -U shoira test;
+        > postgres=# \c test
+
+-- Create show delete postgres
+create database animals > create DB;
+\l                      > list all databases
+\d                      > describe
+\d animals              > describe DB animals 
+
+
+
+-- Create show delete mySQL
 create database animals;
 show databases ;
 drop database animals-1;
 use  animals;
 select database();
+
+
+
 
 
 -- CRUD
