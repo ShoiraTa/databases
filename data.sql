@@ -17,19 +17,19 @@ VALUES ('Devimon', DATE '05-12-2017', '5', 'true', '11');
 
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Charmander', DATE '08-02-2020', '0', 'false', '11');
+VALUES ('Charmander', DATE '08-02-2020', '0', 'false', '-11.0');
 
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Plantmon', DATE '11-15-2022', '2', 'true', '5.7');
+VALUES ('Plantmon', DATE '11-15-2022', '2', 'true', '-5.7');
 
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Squirtle', DATE '02-04-1993', '3', 'false', '12.3');
+VALUES ('Squirtle', DATE '02-04-1993', '3', 'false', '-12.13');
 
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Angemon', DATE '12-06-2005', '1', 'true', '45');
+VALUES ('Angemon', DATE '12-06-2005', '1', 'true', '-45.0');
 
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
