@@ -31,6 +31,9 @@ create database animals > create DB;
 \l                      > list all databases
 \d                      > describe
 \d animals              > describe DB animals 
+-- create from a file
+
+\i animals.sql
 
 
 
@@ -68,6 +71,7 @@ drop table cats
 
 -- READ
 SELECT * FROM cats
+SELECT * FROM cats ORDER BY first_name
 SELECT name, population FROM world  WHERE name IN ('Sweden', 'Norway', 'Denmark');
 SELECT name, area FROM world  WHERE area BETWEEN 200000 AND 250000  
 SELECT name FROM world  WHERE name LIKE 'Y%'
