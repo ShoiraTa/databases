@@ -1,4 +1,50 @@
--- Animals
+CREATE TABLE animals(
+  id bigserial PRIMARY KEY,
+  name VARCHAR(50),
+  date_of_birth DATE,
+  escape_attempts INT,
+  neutered BOOLEAN,
+  weight_kg decimal
+);
+
+
+create table owners (
+id   bigserial PRIMARY KEY,
+full_name varchar(20),
+age int
+);
+
+create table species (
+id   bigserial PRIMARY KEY,
+name varchar(20)
+);
+
+INSERT INTO owners
+(full_name, age)
+VALUES('Sam Smith', '34' );
+INSERT INTO owners
+(full_name, age)
+VALUES('Jennifer Orwell', '19' );
+INSERT INTO owners
+(full_name, age)
+VALUES('Bob', '45' );
+INSERT INTO owners
+(full_name, age)
+VALUES('Melody Pond', '77' );
+INSERT INTO owners
+(full_name, age)
+VALUES('Dean Winchester', '14' );
+INSERT INTO owners
+(full_name, age)
+VALUES('Jodie Whittaker', '38' );
+
+INSERT INTO species
+(name)
+VALUES('Pokemon' );
+INSERT INTO species
+(name)
+VALUES('Digimon' );
+
 INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES('Agumon', DATE '2020-02-03', '0', 'true', '10.23' );
@@ -40,36 +86,15 @@ INSERT INTO animals
 (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 VALUES ('Blossom', DATE '10-13-1998', '3', 'true', '17');
 
--- Owners
-INSERT INTO owners
-(full_name, age)
-VALUES('Sam Smith', '34' );
 
-INSERT INTO owners
-(full_name, age)
-VALUES('Jennifer Orwell', '19' );
+ALTER TABLE animals
+ADD species VARCHAR(20);
 
-INSERT INTO owners
-(full_name, age)
-VALUES('Bob', '45' );
+ALTER TABLE animals
+drop COLUMN species;
 
-INSERT INTO owners
-(full_name, age)
-VALUES('Melody Pond', '77' );
+ALTER TABLE animals
+ADD species_id BIGINT REFERENCES species(id);
 
-INSERT INTO owners
-(full_name, age)
-VALUES('Dean Winchester', '14' );
-
-INSERT INTO owners
-(full_name, age)
-VALUES('Jodie Whittaker', '38' );
-
--- Species
-INSERT INTO species
-(name)
-VALUES('Pokemon' );
-
-INSERT INTO species
-(name)
-VALUES('Digimon' );
+ALTER TABLE animals
+ADD owner_id BIGINT REFERENCES owners(id);
